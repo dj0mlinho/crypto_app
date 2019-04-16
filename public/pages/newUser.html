@@ -1,0 +1,19 @@
+<h3 class="lead display-4 mb-3">New User</h3>
+<div class="row">
+  <div class="col-4 offset-4">
+    <input
+      type="text"
+      placeholder="Ime"
+      ng-model="newUserData.firstName"
+      class="form-control mb-1"
+    />
+    <input type="text" placeholder="Prezime" ng-model="newUserData.lastName" class="form-control mb-1" />
+    <input
+      type="text"
+      placeholder="Investicija"
+      ng-model="newUserData.initialInvestment"
+      class="form-control mb-1"
+    />
+    <button ng-click="newUser();" class="btn btn-outline-success mt-2 form-control">Add</button>
+  </div>
+</div>

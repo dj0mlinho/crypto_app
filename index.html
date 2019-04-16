@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cryptoApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>cryptoApp</title>
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="public/stylesheets/master.css" />
+  </head>
+  <body>
+    <div class="container-fluid text-center">
+      <div class="jumbotron">
+        <h1 class="lead display-2">Crypto Widget</h1>
+      </div>
+      <ng-view></ng-view>
+    </div>
+    <!-- Bootstrap JavaScript -->
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Angular Module -->
+    <script src="public/app.js"></script>
+    <!-- Angular Routes -->
+    <script src="public/routes.js"></script>
+    <!-- Controllers -->
+    <script src="public/controllers/startCtrl.js"></script>
+    <script src="public/controllers/usersListCtrl.js"></script>
+    <script src="public/controllers/newInvestmentCtrl.js"></script>
+    <script src="public/controllers/newUserCtrl.js"></script>
+    <!-- Services -->
+    <script src="public/services/db.js"></script>
+  </body>
+</html>

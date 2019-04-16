@@ -1,0 +1,113 @@
+<h3 class="lead display-4 mb-3">New Investment</h3>
+<!-- if admin comes to this page without prior new user registration -->
+<div ng-if="currentUserData.existingUser">
+  <div class="row">
+    <div class="col-4 offset-4">
+      <input
+        type="text"
+        placeholder="First Name"
+        ng-model="userIdentificationData.firstName"
+        class="form-control mb-1"
+      />
+      <input
+        type="text"
+        placeholder="Last Name"
+        ng-model="userIdentificationData.lastName"
+        class="form-control mb-1"
+      />
+      <button
+        ng-click="findUser();"
+        class="btn btn-outline-primary mt-2 form-control"
+      >
+        Find User
+      </button>
+    </div>
+  </div>
+</div>
+<!-- if admin comes to this page after new user registration -->
+<div ng-if="!currentUserData.existingUser">
+  <!-- Change View -->
+  <div id="changeView">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 col-12">
+          <div class="row">
+            <div class="col-3 font-weight-bolder border py-2">
+              Coin
+            </div>
+            <div class="col-3 font-weight-bolder border py-2">
+              Quantity
+            </div>
+            <div class="col-3 font-weight-bolder border py-2">
+              Value
+            </div>
+            <div class="col-3 font-weight-bolder border py-2">
+              Delete
+            </div>
+          </div>
+          <div class="cryptoRowsContainer"></div>
+        </div>
+        <div class="col-sm-3 col-12 text-left">
+          <p>
+            Ime:
+            <span
+              ng-bind="currentUserData.firstName"
+              class="font-weight-bolder"
+            ></span>
+          </p>
+          <p>
+            Prezime:
+            <span
+              ng-bind="currentUserData.lastName"
+              class="font-weight-bolder"
+            ></span>
+          </p>
+          <p>
+            Investicija:
+            <span
+              ng-bind="currentUserData.initialInvestment"
+              class="font-weight-bolder"
+            ></span
+            > <span class="font-weight-bolder">$</span>
+          </p>
+
+          <div class="dropdown" style="width:100%">
+            <button ng-click="dropdownMenu();" class="dropbtn btn btn-success">
+              Coins
+            </button>
+            <div
+              id="myDropdown"
+              class="dropdown-content"
+              ng-init="dropdownLoad();"
+            >
+              <input
+                type="text"
+                placeholder="Search.."
+                id="myInput"
+                ng-keyup="dropdownFilter();"
+              />
+              <div
+                class="dropdown-field"
+                ng-repeat="cryptoValue in cryptoData"
+                ng-click="updateCryptoData(cryptoValue.name, cryptoValue.quote.USD.price, null);"
+              >
+                {{ cryptoValue.name }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="cryptoRowTemplate">
+  <div class="row"  data-row-index="$$cryptoRowIndex$$">
+      <div class="col-3 border pt-2">$$cryptoName$$</div>
+      <div class="col-3 border"><input type="text" placeholder="Unesi kolicinu" class="coin-amount-input form-control"></div>
+      <div class="col-3 border pt-2">$$totalValue$$</div>
+      <div class="col-3 border">
+          <button type="button" class="delete-row-btn btn btn-danger">Delete</button>
+      </div>
+  </div>
+</script>

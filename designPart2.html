@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+</head>
+
+<body>
+
+  <!-- Start view -->
+  <div class="container">
+    <div class="dropdown border">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Choose
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#addNew">And New Investor</a>
+        <a class="dropdown-item" href="#find">Find Investor</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Find Investor View -->
+  <div id="find border">
+    <div class="container">
+    </div>
+  </div>
+
+
+  <!-- Add New Investor View -->
+  <div id="addNew" class="border">
+    <form action="" method="POST">
+      <div class="column">
+        <div class="form-group col-4">
+          <input class="form-control" type="text" id="name" placeholder="Enter name" name="name">
+        </div>
+        <div class="form-group col-4">
+          <input class="form-control" type="text" id="startAmount" placeholder="Enter amount" name="startAmount">
+          <button class="mt-2 btn btn-primary" type="submit" id="startAmountBtn" name="startAmountBtn">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <!-- Change View -->
+  <div id="changeView">
+    <div class="container">
+      <div class="row">
+        <div class="col-3 border">
+          <p>User: Pera</p>
+          <p>Investicija: 100.000,00$</p>
+
+          <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn btn">Coins</button>
+            <div id="myDropdown" class="dropdown-content">
+              <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+              <a href="#about">About</a>
+              <a href="#base">Base</a>
+              <a href="#blog">Blog</a>
+              <a href="#contact">Contact</a>
+              <a href="#custom">Custom</a>
+              <a href="#support">Support</a>
+              <a href="#tools">Tools</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-9 border">
+          <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th>Coin</th>
+                <th>Quantity</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Etherum</td>
+                <td>5</td>
+                <td>100.000,00$</td>
+              </tr>
+            </tbody>
+            <tfoot class="border-top">
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Ukupno: 100.000,00$ <br>  (Preostalo: 100.000,00$)</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    function filterFunction() {
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      div = document.getElementById("myDropdown");
+      a = div.getElementsByTagName("a");
+      for (i = 0; i < a.length; i++) {
+        txtValue = a[i].textContent || a[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          a[i].style.display = "";
+        } else {
+          a[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+
+
+
+
+</body>
+
+</html>
