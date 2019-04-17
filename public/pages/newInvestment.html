@@ -36,12 +36,15 @@
               Coin
             </div>
             <div class="col-3 font-weight-bolder border py-2">
-              Quantity
+              Insert Amount
             </div>
-            <div class="col-3 font-weight-bolder border py-2">
+            <div class="col-2 font-weight-bolder border py-2">
+              Amount
+            </div>
+            <div class="col-2 font-weight-bolder border py-2">
               Value
             </div>
-            <div class="col-3 font-weight-bolder border py-2">
+            <div class="col-2 font-weight-bolder border py-2">
               Delete
             </div>
           </div>
@@ -66,9 +69,9 @@
             Investicija:
             <span
               ng-bind="currentUserData.initialInvestment"
-              class="font-weight-bolder"
-            ></span
-            > <span class="font-weight-bolder">$</span>
+              class="font-weight-bolder initialInvestment"
+            ></span>
+            <span class="font-weight-bolder">$</span>
           </p>
 
           <div class="dropdown" style="width:100%">
@@ -97,6 +100,28 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-sm-9 col-12">
+          <div class="row mb-1 mt-1" style="height: 2.8em; line-height: 2.8em">
+            <div class="col-8 text-right font-weight-bolder">Ukupno:</div>
+            <div class="col-2 border font-weight-bold fullValue">0.00$</div>
+            <div class="col-2"></div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-12"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-9 col-12">
+          <div class="row mb-1 mt-1" style="height: 2.8em; line-height: 2.8em">
+            <div class="col-8 text-right font-italic">Preostalo:</div>
+            <div class="col-2 border font-italic valueRemain">
+              <span ng-bind="currentUserData.initialInvestment"></span>$
+            </div>
+            <div class="col-2"></div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-12"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -105,8 +130,9 @@
   <div class="row"  data-row-index="$$cryptoRowIndex$$">
       <div class="col-3 border pt-2">$$cryptoName$$</div>
       <div class="col-3 border"><input type="text" placeholder="Unesi kolicinu" class="coin-amount-input form-control"></div>
-      <div class="col-3 border pt-2">$$totalValue$$</div>
-      <div class="col-3 border">
+      <div class="col-2 border pt-2">$$cryptoAmount$$</div>
+      <div class="col-2 border pt-2">$$totalValue$$</div>
+      <div class="col-2 border">
           <button type="button" class="delete-row-btn btn btn-danger">Delete</button>
       </div>
   </div>
